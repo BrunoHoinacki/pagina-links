@@ -61,3 +61,14 @@ body {
     display: none;
 }
 
+/* Modo claro */
+.light #theme-logo {
+    content: url('/assets/images/forcoder-logo-light.png');
+}
+
+/* Modo escuro */
+.dark #theme-logo {
+    content: url('/assets/images/forcoder-logo-dark.png');
+}
+
+
