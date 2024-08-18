@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="light">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <!-- Iconify CDN -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Página de links</title>
+</head>
+
+<body>
+    <!-- Video de fundo -->
+    <video class="video-background" autoplay muted loop>
+        <source src="./assets/videos/fundo.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <!-- Som de fundo -->
+    <audio id="background-audio" src="./assets/sounds/fundo.mp3"></audio>
+
+    <!-- Botão para pausar/retomar a música -->
+    <button id="toggle-music-btn"
+        class="fixed top-4 right-4 bg-gray-700 text-light p-2 rounded-full shadow-lg hover:bg-gray-700 focus:outline-none">
+        <span class="iconify" data-icon="mdi:music-off" id="toggle-music-icon"></span>
+    </button>
+
+    <div class="container mx-auto px-4">
+        <!-- Profile -->
+        <div class="flex flex-col items-center justify-center w-full mt-32">
+            <img src="/assets/images/forcoder-dark.jpg" class="rounded-full border shadow-lg w-32 h-32"
+                alt="Logo perfil forcoder">
+            <p class="text-xl font-semibold mt-4">@forcoder</p>
+
+            <button id="color-mode-toggle" class="p-2 rounded-full focus:outline-none pt-8">
+                <!-- Ícone do modo claro (visível por padrão) -->
+                <div class="iconify-light rounded-full p-2 backdrop-blur-md border bg-white/10 hover:scale-105">
+                    <svg class="iconify-light" width="32" height="32" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5 7V4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M15 5.5H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.5 1.5V3.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11.5 2.5H9.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M13.5436 9.53755C12.5619 9.81283 11.5247 9.82185 10.5384 9.56369C9.55205 9.30553 8.65223 8.78949 7.93131 8.06857C7.21039 7.34765 6.69436 6.44783 6.43619 5.46152C6.17803 4.47522 6.18706 3.43797 6.46233 2.4563C5.4945 2.72568 4.61413 3.24394 3.90892 3.95944C3.20371 4.67495 2.69827 5.56274 2.44295 6.53438C2.18763 7.50602 2.19133 8.52759 2.45369 9.49736C2.71605 10.4671 3.22791 11.3512 3.93829 12.0616C4.64866 12.772 5.53276 13.2838 6.50253 13.5462C7.47229 13.8086 8.49387 13.8123 9.4655 13.5569C10.4371 13.3016 11.3249 12.7962 12.0404 12.091C12.7559 11.3858 13.2742 10.5054 13.5436 9.53755Z"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+                <!-- Ícone do modo escuro (visível apenas no modo escuro) -->
+                <div class="iconify-dark rounded-full p-2 backdrop-blur-md border bg-white/10 hover:scale-105">
+                    <svg class="iconify-dark" width="32" height="32" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8 11.75C10.0711 11.75 11.75 10.0711 11.75 8C11.75 5.92893 10.0711 4.25 8 4.25C5.92893 4.25 4.25 5.92893 4.25 8C4.25 10.0711 5.92893 11.75 8 11.75Z"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M8 2.25V1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3.9313 3.9313L3.05005 3.05005" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M2.25 8H1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3.9313 12.0687L3.05005 12.95" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M8 13.75V15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12.0686 12.0687L12.9499 12.95" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M13.75 8H15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12.0686 3.9313L12.9499 3.05005" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </button>
+
+        </div>
+
+        <!-- Links -->
+        <div class="mt-8 flex flex-col items-center text-center">
+            <ul class="w-full max-w-sm space-y-4">
+                <li class="w-full backdrop-blur-md border bg-white/10 rounded-lg shadow-lg hover:scale-105">
+                    <a href="https://www.forcoder.com.br" target="_blank"
+                        class="flex items-center justify-center gap-2 w-full py-3 px-4 text-light hover:text-gray-800 rounded-lg transition-colors">
+                        <span class="iconify" data-icon="mdi:web" data-inline="false"></span>
+                        Ver nosso Site
+                    </a>
+                </li>
+                <li class="w-full backdrop-blur-md border bg-white/10 rounded-lg shadow-lg hover:scale-105">
+                    <a href="https://api.whatsapp.com/send?phone=5551980456224" target="_blank"
+                        class="flex items-center justify-center gap-2 w-full py-3 px-4 --text-light hover:text-gray-800 rounded-lg transition-colors">
+                        <span class="iconify" data-icon="mdi:whatsapp" data-inline="false"></span>
+                        Chamar no Whatsapp
+                    </a>
+                </li>
+                <li class="w-full backdrop-blur-md border bg-white/10 rounded-lg shadow-lg hover:scale-105">
+                    <a href="https://www.instagram.com/forcoderbr/" target="_blank"
+                        class="flex items-center justify-center gap-2 w-full py-3 px-4 --text-light hover:text-gray-800 rounded-lg transition-colors">
+                        <span class="iconify" data-icon="mdi:instagram" data-inline="false"></span>
+                        Ver Instagram
+                    </a>
+                </li>
+                <li class="w-full backdrop-blur-md border bg-white/10 rounded-lg shadow-lg hover:scale-105">
+                    <a href="https://www.facebook.com/profile.php?id=61563058871779" target="_blank"
+                        class="flex items-center justify-center gap-2 w-full py-3 px-4 --text-light hover:text-gray-800 rounded-lg transition-colors">
+                        <span class="iconify" data-icon="mdi:facebook" data-inline="false"></span>
+                        Ver Facebook
+                    </a>
+                </li>
+                <li class="w-full backdrop-blur-md border bg-white/10 rounded-lg shadow-lg hover:scale-105">
+                    <a href="https://www.linkedin.com/in/forcoder/" target="_blank"
+                        class="flex items-center justify-center gap-2 w-full py-3 px-4 --text-light hover:text-gray-800 rounded-lg transition-colors">
+                        <span class="iconify" data-icon="mdi:linkedin" data-inline="false"></span>
+                        Ver Linkedin
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Copyright -->
+        <div class="flex flex-row mt-10 text-light text-sm items-center justify-center">
+            Feito com ♥ pela <a href="https://www.forcoder.com.br" target="_blank"
+                class="text-gray-300 hover:scale-105"><img src="/assets/images/forcoder-logo-light.png" class="h-6 ml-2"
+                    alt=""></a>
+        </div>
+    </div>
+</body>
+
+</html>
