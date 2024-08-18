@@ -9,7 +9,7 @@ window.onload = function() {
         audio.play().catch((error) => {
             console.log("Erro ao tentar tocar a música: ", error);
         });
-    }, 5000);
+    }, 2000);
 
     // Função para alternar o estado da música
     toggleBtn.addEventListener('click', () => {
