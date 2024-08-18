@@ -32,9 +32,20 @@
 
     <!-- Botão para pausar/retomar a música -->
     <button id="toggle-music-btn"
-        class="fixed top-4 right-4 bg-gray-700 text-light p-2 rounded-full shadow-lg hover:bg-gray-700 focus:outline-none">
-        <span class="iconify" data-icon="mdi:music-off" id="toggle-music-icon"></span>
+        class="fixed top-4 right-4 hover:scale-125 backdrop-blur-md bg-white/10 border text-light p-2 rounded-full shadow-lg focus:outline-none">
+        <!-- Ícone de pausa -->
+        <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M2 5.27L3.28 4L20 20.72L18.73 22L9 12.27v5.23A3.5 3.5 0 0 1 5.5 21A3.5 3.5 0 0 1 2 17.5A3.5 3.5 0 0 1 5.5 14c.54 0 1.05.12 1.5.34v-4.07zM21 3v12.5c0 1-.43 1.92-1.12 2.56l-4.94-4.94c.64-.69 1.56-1.12 2.56-1.12c.54 0 1.05.12 1.5.34V6.47l-8.83 1.88l-2.51-2.51z" />
+        </svg>
+
+        <!-- Ícone de retomar -->
+        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="2.1em" viewBox="0 0 100 100">
+            <path fill="currentColor"
+                d="M84.105 13.627H32.938a3.196 3.196 0 0 0-3.195 3.195v48.069a16.5 16.5 0 0 0-3.543-.394c-7.456 0-13.5 4.896-13.5 10.938c0 6.041 6.044 10.937 13.5 10.937c7.455 0 13.5-4.896 13.5-10.937V29.257h37.644v26.401a16.5 16.5 0 0 0-3.543-.394c-7.456 0-13.5 4.896-13.5 10.938s6.044 10.937 13.5 10.937c7.455 0 13.5-4.896 13.5-10.937V16.823a3.197 3.197 0 0 0-3.196-3.196" />
+        </svg>
     </button>
+
 
     <div class="container mx-auto px-4">
         <!-- Profile -->

@@ -1,10 +1,11 @@
 window.onload = function() {
     const audio = document.getElementById('background-audio');
     const toggleBtn = document.getElementById('toggle-music-btn');
-    const toggleIcon = document.getElementById('toggle-music-icon');
+    const pauseIcon = document.getElementById('pause-icon');
+    const playIcon = document.getElementById('play-icon');
     const colorModeToggle = document.getElementById('color-mode-toggle');
 
-    // Função para tocar a música após 5 segundos
+    // Função para tocar a música após 2 segundos
     setTimeout(() => {
         audio.play().catch((error) => {
             console.log("Erro ao tentar tocar a música: ", error);
@@ -17,10 +18,12 @@ window.onload = function() {
             audio.play().catch((error) => {
                 console.log("Erro ao tentar tocar a música: ", error);
             });
-            toggleIcon.setAttribute('data-icon', 'mdi:music-off');
+            pauseIcon.style.display = 'block';
+            playIcon.style.display = 'none';
         } else {
             audio.pause();
-            toggleIcon.setAttribute('data-icon', 'mdi:music');
+            pauseIcon.style.display = 'none';
+            playIcon.style.display = 'block';
         }
     });
 
@@ -52,4 +55,8 @@ window.onload = function() {
         moonIcon.style.display = 'block';
         sunIcon.style.display = 'none';
     }
+
+    // Inicializar os ícones do botão de música
+    pauseIcon.style.display = 'block';
+    playIcon.style.display = 'none';
 };
